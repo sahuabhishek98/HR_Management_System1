@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+        <title>IT & Software</title>
+        <style media="screen">
+            body{
+                background: rgb(247,248,249);
+            }
+            .top1{
+                background: rgb(0,120,149);
+                height: 50px;
+                width: 100%;
+                font-size: 18px;
+                padding-top: 10px;
+            }
+            .ff1{
+                font-family: times;
+                color: rgb(0,85,136);
+                margin: 0 auto;
+                text-align: center;
+            }
+            .w{color: #FFF;}
+            .tcen{text-align: center;}
+            .c{color: rgb(0,120,149);}
+            .top2{
+                height: 25px;
+                width: 100%;
+            }
+            .margin1{
+                margin-left: 35px;
+                color: rgb(0,120,149);
+                font-size: 14px;
+                cursor: pointer;
+            }
+            .top2 a:hover{text-decoration: none;}
+            .wb{
+                margin: 50px auto;
+                max-width: 1400px;
+                text-align: center;
+            }
+            .in{display: inline-block;}
+            .textcol{color: rgb(5,41,117);}
+            .back{
+                width: 320px;
+                text-align: center;
+                margin-left: 20px;
+                background: #f1f1f1;
+                box-shadow: 2px 2px 8px 2px gray;
+                min-height: 380px;
+                border-top-left-radius: 8px;
+                border-top-right-radius: 8px;
+                margin-top: 20px;
+            }
+            .img2{
+                width: 100%;
+                border-top-left-radius: 8px;
+                border-top-right-radius: 8px;
+            }
+            .txt2{
+                width: 80%;
+                display: block;
+                margin: 0 auto;
+            }
+            .b{color: rgb(0,120,149);}
+            .foot1{
+                width: 100%;
+                height: 70px;
+                background: rgb(0,120,149);
+            }
+            .foot1 p{
+                color: #FFF;
+                padding-top: 25px;
+                padding-left: 200px;
+            }
+            .da2{
+                position: absolute;
+                top: 15px;
+                left: 10px;
+            }
+            .wr{color: #F00;}
+            .logo1{
+                position: relative;
+                top: -60px;
+                color: #000;
+                text-shadow: 4px 4px 20px rgb(0,120,149);
+                padding: 0 15px;
+                margin: 0 auto;
+                text-align: center;
+                font-family: times;
+            }
+            .lo1,.lo2{
+                background: rgba(255,255,255,0.6);
+                width: fit-content;
+                margin: 0 auto;
+                padding: 0 20px
+            }
+            .btn-glass {
+                flex-grow: 1;
+                text-align: center;
+                display: inline-block;
+                color: rgba(255, 255, 255, 0.7);
+                text-decoration: none;
+                padding: 0.5em 0.8em;
+                font-family: Lato;
+                font-weight: 300;
+                border: 1px dotted transparent;
+                letter-spacing: 0.98pt;
+                text-transform: uppercase;
+                transition: background-position 2s cubic-bezier(0, 1, 0, 1), border-color 500ms, background-color 500ms;
+                position: relative;
+                background-attachment: fixed, scroll;
+                background-size: 100vw 100vh, cover;
+                background-position: center center, 0 0;
+                background-image: repeating-linear-gradient(-45deg, rgba(255, 255, 255, 0) 8%, rgba(255, 255, 255, 0.075) 10%, rgba(255, 255, 255, 0.075) 14%, rgba(255, 255, 255, 0.15) 14%, rgba(255, 255, 255, 0.15) 15%, rgba(255, 255, 255, 0.075) 17%, rgba(255, 255, 255, 0) 30%, rgba(255, 255, 255, 0) 36%, rgba(255, 255, 255, 0.075) 40%, rgba(255, 255, 255, 0.15) 42%, rgba(255, 255, 255, 0) 43%, rgba(255, 255, 255, 0) 55%, rgba(255, 255, 255, 0.075) 60%, rgba(255, 255, 255, 0.075) 66%, rgba(255, 255, 255, 0.15) 66%, rgba(255, 255, 255, 0.075) 70%, rgba(255, 255, 255, 0) 75%, rgba(255, 255, 255, 0) 100%), radial-gradient(ellipse farthest-corner, transparent, rgba(0, 0, 0, 0.2) 110%);
+            }
+            .btn-glass:hover {
+                background-position: -100vw 0, 0 0;
+            }
+            .btn-glass:active {
+                background-position: -75vw 0, 0 0;
+                border-style: solid;
+            }
+            .register{
+                width: 90%;
+                margin-top: 30px;
+            }
+            .c1{font-size: 18px;}
+            .wb .s1 p{color: rgb(0,120,149);}
+        </style>
+    </head>
+    <body>
+        <div class="top1 w tcen ff1">
+            <p>Solve your challenge with an online/offline course| Join millions of students and get your next course for ₹7000</p>
+        </div>
+        <div class="dropdown da2">
+            <span class="dropdown-toggle" data-toggle="dropdown">
+                <span class="">
+                    <a href="#"><span class="glyphicon glyphicon-th wr"></span></a>
+                    <span style="color: #fff; cursor: pointer;"> All Courses</span>
+                </span>
+            </span>
+            <ul class="dropdown-menu w">
+                <li><a tabindex="-1" href="development.html"><i class="ic fa fa-file-code-o" style="font-size:15px"></i> Development</a></li>
+                <li><a tabindex="-1" href="business.html"><span class="ic glyphicon glyphicon-briefcase"></span> Business</a></li>
+                <li><a tabindex="-1" href="design.html"><i class="ic fa fa-edit"></i> Design</a></li>
+                <li><a tabindex="-1" href="marketing.html"><span class="ic glyphicon glyphicon-globe"></span> Marketing</a></li>
+                <li><a tabindex="-1" href="pgdhrm.html"><span class="ic glyphicon glyphicon-education"></span>PGDHRM</a></li>
+                <li><a tabindex="-1" href="photography.html"><span class="ic glyphicon glyphicon-camera"></span> Photography</a></li>
+                <li><a tabindex="-1" href="language.html"><i class="ic fa fa-comments"></i> Language</a></li>
+            </ul>
+        </div>
+
+        <div id="myCarousel" class="carousel slide" data-ride="carousel">
+            <div class="carousel-inner">
+                <div class="item active">
+                    <img src="trainingimages/itsits.png" alt="" style="width:100%; height: 300px;">
+                </div>
+                <div class="item">
+                    <img src="trainingimages/itsits2.png" alt="" style="width:100%; height: 300px;">
+                </div>
+                <div class="item">
+                    <img src="trainingimages/itsits3.png" alt="" style="width:100%; height: 300px;">
+                </div>
+                <div class="item">
+                    <img src="trainingimages/itsits4.jpg" alt="" style="width:100%; height: 300px;">
+                </div>
+                <div class="item">
+                    <img src="trainingimages/itsits5.jpg" alt="" style="width:100%; height: 300px;">
+                </div>
+            </div>
+
+            <a class="left carousel-control" href="#myCarousel" data-slide="prev">
+                <span class="glyphicon glyphicon-chevron-left"></span>
+                <span class="sr-only">Previous</span>
+            </a>
+            <a class="right carousel-control" href="#myCarousel" data-slide="next">
+                <span class="glyphicon glyphicon-chevron-right"></span>
+                <span class="sr-only">Next</span>
+            </a>
+        </div>
+        <div class="logo1">
+            <h2 class="lo1">Software Development Courses and Certification Training</h2>
+            <h4 class="lo2">Master the latest trends in software development</h4>
+        </div>
+        <h2 class="ff1">Top courses in IT & Software</h2>
+        <div class="wb">
+            <div class="back in">
+                <img src="trainingimages/java2.png" alt="" class="img2">
+                <p class="c c1">Java Certification Practice Test</p>
+                <table style="margin: 0 auto;">
+                    <tr>
+                        <td class="c"><i class="fa fa-file-text"></i></td>
+                        <td> 121 Lectures</td>
+                    </tr>
+                    <tr>
+                        <td class="c"><i class="fa fa-clock-o"></i></td>
+                        <td> 300 hours</td>
+                    </tr>
+                    <tr>
+                        <td class="c"><i class="material-icons">network_check</i></td>
+                        <td> All Levels</td>
+                    </tr>
+                </table>
+                <button type="submit" name="button" class="btn btn-glass btn-primary btn-glass register">Register</button>
+            </div>
+            <div class="back in">
+                <img src="trainingimages/cyb2.png" alt="" class="img2">
+                <p class="c c1">The Complete Cyber Security Course</p>
+                <table style="margin: 0 auto;">
+                    <tr>
+                        <td class="c"><i class="fa fa-file-text"></i></td>
+                        <td> 121 Lectures</td>
+                    </tr>
+                    <tr>
+                        <td class="c"><i class="fa fa-clock-o"></i></td>
+                        <td> 300 hours</td>
+                    </tr>
+                    <tr>
+                        <td class="c"><i class="material-icons">network_check</i></td>
+                        <td> All Levels</td>
+                    </tr>
+                </table>
+                <button type="submit" name="button" class="btn btn-glass btn-primary btn-glass register">Register</button>
+            </div>
+
+            <div class="back in">
+                <img src="trainingimages/eth2.png" alt="" class="img2">
+                <p class="c c1">Learn Ethical Hacking From Scratch</p>
+                <table style="margin: 0 auto;">
+                    <tr>
+                        <td class="c"><i class="fa fa-file-text"></i></td>
+                        <td> 121 Lectures</td>
+                    </tr>
+                    <tr>
+                        <td class="c"><i class="fa fa-clock-o"></i></td>
+                        <td> 300 hours</td>
+                    </tr>
+                    <tr>
+                        <td class="c"><i class="material-icons">network_check</i></td>
+                        <td> All Levels</td>
+                    </tr>
+                </table>
+                <button type="submit" name="button" class="btn btn-glass btn-primary btn-glass register">Register</button>
+            </div>
+            <div class="back in">
+                <img src="trainingimages/ios2.png" alt="" class="img2">
+                <p class="c c1">iPhone Apps</p>
+                <table style="margin: 0 auto;">
+                    <tr>
+                        <td class="c"><i class="fa fa-file-text"></i></td>
+                        <td> 121 Lectures</td>
+                    </tr>
+                    <tr>
+                        <td class="c"><i class="fa fa-clock-o"></i></td>
+                        <td> 300 hours</td>
+                    </tr>
+                    <tr>
+                        <td class="c"><i class="material-icons">network_check</i></td>
+                        <td> All Levels</td>
+                    </tr>
+                </table>
+                <button type="submit" name="button" class="btn btn-glass btn-primary btn-glass register">Register</button>
+            </div>
+            <div class="back in">
+                <img src="trainingimages/assso2.png" alt="" class="img2">
+                <p class="c c1">Certified Architect Associate</p>
+                <table style="margin: 0 auto;">
+                    <tr>
+                        <td class="c"><i class="fa fa-file-text"></i></td>
+                        <td> 121 Lectures</td>
+                    </tr>
+                    <tr>
+                        <td class="c"><i class="fa fa-clock-o"></i></td>
+                        <td> 300 hours</td>
+                    </tr>
+                    <tr>
+                        <td class="c"><i class="material-icons">network_check</i></td>
+                        <td> All Levels</td>
+                    </tr>
+                </table>
+                <button type="submit" name="button" class="btn btn-glass btn-primary btn-glass register">Register</button>
+            </div>
+            <div class="back in">
+                <img src="trainingimages/pr2.png" alt="" class="img2">
+                <p class="c c1">Everyday Programming Skills</p>
+                <table style="margin: 0 auto;">
+                    <tr>
+                        <td class="c"><i class="fa fa-file-text"></i></td>
+                        <td> 121 Lectures</td>
+                    </tr>
+                    <tr>
+                        <td class="c"><i class="fa fa-clock-o"></i></td>
+                        <td> 300 hours</td>
+                    </tr>
+                    <tr>
+                        <td class="c"><i class="material-icons">network_check</i></td>
+                        <td> All Levels</td>
+                    </tr>
+                </table>
+                <button type="submit" name="button" class="btn btn-glass btn-primary btn-glass register">Register</button>
+            </div>
+            <div class="back in">
+                <img src="trainingimages/ha2.png" alt="" class="img2">
+                <p class="c c1">Learn Wi-Fi Penetration Testing</p>
+                <table style="margin: 0 auto;">
+                    <tr>
+                        <td class="c"><i class="fa fa-file-text"></i></td>
+                        <td> 121 Lectures</td>
+                    </tr>
+                    <tr>
+                        <td class="c"><i class="fa fa-clock-o"></i></td>
+                        <td> 300 hours</td>
+                    </tr>
+                    <tr>
+                        <td class="c"><i class="material-icons">network_check</i></td>
+                        <td> All Levels</td>
+                    </tr>
+                </table>
+                <button type="submit" name="button" class="btn btn-glass btn-primary btn-glass register">Register</button>
+            </div>
+            <div class="back in">
+                <img src="trainingimages/si2.png" alt="" class="img2">
+                <p class="c c1">Understanding and Troubleshooting SIP</p>
+                <table style="margin: 0 auto;">
+                    <tr>
+                        <td class="c"><i class="fa fa-file-text"></i></td>
+                        <td> 121 Lectures</td>
+                    </tr>
+                    <tr>
+                        <td class="c"><i class="fa fa-clock-o"></i></td>
+                        <td> 300 hours</td>
+                    </tr>
+                    <tr>
+                        <td class="c"><i class="material-icons">network_check</i></td>
+                        <td> All Levels</td>
+                    </tr>
+                </table>
+                <button type="submit" name="button" class="btn btn-glass btn-primary btn-glass register">Register</button>
+            </div>
+        </div>
+        <div class="txt2">
+            <h2 class="b">Top 5 Current Tech Trends for IT enthusiasts</h2>
+            <h6>By <b>Adarsh Jaiswal</b></h6>
+            <p>The best part of jumping on to the IT bandwagon is: There are always going to be plenty of
+                possibilities for a person whether s/he starts from a diploma level or a full-fledged engineering degree.</p>
+            <p>To list down explicitly (in order of priority: top-down) for a fresher, here are some of
+                the best technical course options that IT Cos hunt for in India and abroad:</p>
+            <h4>1. JAVA/J2EE & Its Frameworks (Struts, Spring, Hibernate):</h4>
+            <p>The most widely used technology by almost all the esteemed companies across domains (Banking, Telecom, Life Sciences,
+                Financial Services, Aviation, Academia, Retail & Consumer products) around the world is nothing but Java.</p>
+            <p>Aspirants normally get carried away with the charm of JSP & Servlets, but that kills you like sweet poison
+                in the long run. Here is what ‘all’ you ‘must’ cover while opting for a Java course:</p>
+            <ul>
+                <li>J2SE (Core Part)</li>
+                <li>J2EE (JSP & Servlets + EJB)</li>
+                <li>STRUTS (Framework for Java)</li>
+                <li>SPRING and/or HIBERNATE (For more sophisticated & advanced applications)</li>
+            </ul>
+            <h4>2.CISCO Technologies</h4>
+            <p>If you are fascinated by various types of network wires connected to your computer, the plugs and switches that
+                hold the programming logic of those cables, and are curious of how data flows (routes)through those switches,
+                CISCO technologies can be your choice of course.</p>
+            <p>To start with CISCO courses while targeting a decent job, you need at least a senior secondary (10+2) or some diploma
+                / graduation in computer sciences (or even a non-computer profile will do).</p>
+            <p> CISCO technologies are among the few courses which are most popular among non-IT aspirants who are targeting an entry
+                level job (but not without certain drawbacks viz. below average work profile).</p>
+            <p>While opting for any network based course including CISCO technologies, do a thorough research on the infrastructure of
+                practical labs of the institute, as the theories are of almost negligent significance in network based courses.</p>
+            <h4>3. SAS</h4>
+            <p>Data Analytics is now a rapidly growing field and so this Business Intelligence domain has emerged as the most lucrative
+                option among the current breed of IT graduates.</p>
+            <p>SAS, originally Statistical Analysis System, is an integrated system of software products provided by SAS Institute,
+                to perform data entry, retrieval, management, mining, report writing and graphics. Some explicit benefits are as under:</p>
+            <ul>
+                <li>Widely used for business planning, forecasting, and decision support for its accurate results.</li>
+                <li>Extensively used for operations research and project management</li>
+                <li>Best tool for quality improvement and applications development</li>
+                <li>Provides Data warehousing (extract, transform, and load)</li>
+            </ul>
+            <h4>4. DBA (Oracle, DB2, MySql, Sql Server)</h4>
+            <p>In a highly unpredictable and dynamic Software/IT industry, the one course which you can rely on for a stable career is
+                Database Administration (DBA).</p>
+            <p>DBA is all about creating, managing and maintaining huge data files; and from the several database flavours available
+                in the market, Oracle can be your best bet. Others are popular, but once you are through with Oracle, the ones like MySql
+                and DB2 can be easily learned later on in a much shorter period.</p>
+            <h4>5. System Administration (Red Hat, Solaris, UNIX, VMware)</h4>
+            <p>For the ones who are fond of installation and computer administration activities like User Management, system security, disk
+                management, package installations – System administration can be an enchanting choice.</p>
+            <p>As with CISCO technologies, system administration is also popular as a course among non-IT aspirants. You need to have done 10+2
+                or valid diploma/graduation (IT or non-IT) to start with this course and then appear for the certification exams.</p>
+            <p>Unless you hold a regular IT graduation, the certifications are almost mandatory for you if picking this administration route.
+                There are various options in certifications from Red Hat, VMware and Solaris.</p>
+        </div>
+        <div class="foot1">
+            <p>Copyright &copy; 2018 gradeup, Inc.</p>
+        </div>
+    </body>
+</html>

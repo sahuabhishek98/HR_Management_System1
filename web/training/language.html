@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <link rel="stylesheet" href="trainingcss/com.css">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+        <title>Learn Language</title>
+        <style media="screen">
+            .wid{
+                margin: 20px auto;
+                max-width: 1400px;
+                text-align: center;
+            }
+            .back:hover{
+                box-shadow: 1px 1px 4px 1px rgba(0,0,0,0.7);
+            }
+            .mt3{
+                margin-top: -25px;
+                width: 100%;
+                height: 775px;
+            }
+            .wback3{
+                width: 100%;
+                min-height: 70px;
+                height: fit-content;
+                background: rgba(0,120,149,0.7);
+                position: relative;
+                top: -70px;
+                z-index: 1;
+            }
+            .img3{
+                width: 50px;
+                height: 50px;
+                border-radius: 50%;
+            }
+            .marleft3{
+                margin-left: 9%;
+
+            }
+            .pt3{
+                padding-top: 7px;
+            }
+            .img3:hover{border-radius: 30%;}
+            .roboto{
+                font-family: 'Roboto', sans-serif;
+            }
+            .back1{
+                background: linear-gradient(135deg, rgb(1,23,77), rgb(48,137,207));
+                padding: 20px;
+            }
+            .iimtxt{
+                float: right;
+                width: 200px;
+                border: 1px solid black;
+            }
+            .sh1{
+                width: 320px;
+                background: rgb(247,248,249);
+                box-shadow: 2px 2px 2px 2px gray;
+                background: #f1f1f1;
+                min-height: 370px;
+                border-top-left-radius: 8px;
+                border-top-right-radius: 8px;
+            }
+            .sh1:hover{
+                box-shadow: 2px 2px 8px 2px gray;
+            }
+            .sh11{min-height: 350px;}
+            .register{
+                width: 90%;
+            }
+            .txtl{
+                position: absolute;
+                top: 100px;
+                margin: 30px 100px;
+                padding: 0 20px;
+                color: #000;
+                background: rgba(255,255,255,0.7);
+
+                z-index: 1;
+                text-align: center;
+            }
+            .btn-glass {
+                flex-grow: 1;
+                text-align: center;
+                display: inline-block;
+                color: rgba(255, 255, 255, 0.7);
+                text-decoration: none;
+                padding: 0.5em 0.8em;
+                font-family: Lato;
+                font-weight: 300;
+                border: 1px dotted transparent;
+                letter-spacing: 0.98pt;
+                text-transform: uppercase;
+                transition: background-position 2s cubic-bezier(0, 1, 0, 1), border-color 500ms, background-color 500ms;
+                position: relative;
+                background-attachment: fixed, scroll;
+                background-size: 100vw 100vh, cover;
+                background-position: center center, 0 0;
+                background-image: repeating-linear-gradient(-45deg, rgba(255, 255, 255, 0) 8%, rgba(255, 255, 255, 0.075) 10%, rgba(255, 255, 255, 0.075) 14%, rgba(255, 255, 255, 0.15) 14%, rgba(255, 255, 255, 0.15) 15%, rgba(255, 255, 255, 0.075) 17%, rgba(255, 255, 255, 0) 30%, rgba(255, 255, 255, 0) 36%, rgba(255, 255, 255, 0.075) 40%, rgba(255, 255, 255, 0.15) 42%, rgba(255, 255, 255, 0) 43%, rgba(255, 255, 255, 0) 55%, rgba(255, 255, 255, 0.075) 60%, rgba(255, 255, 255, 0.075) 66%, rgba(255, 255, 255, 0.15) 66%, rgba(255, 255, 255, 0.075) 70%, rgba(255, 255, 255, 0) 75%, rgba(255, 255, 255, 0) 100%), radial-gradient(ellipse farthest-corner, transparent, rgba(0, 0, 0, 0.2) 110%);
+            }
+            .btn-glass:hover {
+                background-position: -100vw 0, 0 0;
+            }
+            .btn-glass:active {
+                background-position: -75vw 0, 0 0;
+                border-style: solid;
+            }
+            .build{
+                position: absolute;
+                top: 45%;
+                left: 0;
+                color: #FFF;
+                font-family: times;
+                text-align: center;
+            }
+            .imgbuild{
+                position: relative;
+                left: 100px;
+                height: 300px;
+                width: 450px;
+            }
+            .img2build{
+                position: relative;
+                top: -70px;
+                left: -20px;
+                height: 120px;
+                width: 200px;
+            }
+            .iyi{
+                background: linear-gradient( rgba(0,0,0,0.9) 0%, rgba(0,0,0,0.7) 30% ,rgba(10,20,10,0.1) 95%, rgba(0,0,0,0.7) 100%);
+            }
+        </style>
+    </head>
+    <body>
+        <div class="top1 w tcen ff1">
+            <p>Solve your challenge with an online/offline course| Join millions of students and get your next course for ₹7000</p>
+        </div>
+        <div class="dropdown da">
+            <span class="dropdown-toggle" data-toggle="dropdown">
+                <span class="w">
+                    <a href="#"><span class="glyphicon glyphicon-th wr"></span></a>
+                    <span style="color: #fff; cursor: pointer;"> All Courses</span>
+                </span>
+            </span>
+            <ul class="dropdown-menu">
+                <li><a tabindex="-1" href="development.html"><i class="ic fa fa-file-code-o" style="font-size:15px"></i> Development</a></li>
+                <li><a tabindex="-1" href="business.html"><span class="ic glyphicon glyphicon-briefcase"></span> Business</a></li>
+                <li><a tabindex="-1" href="it.html"><i class="ic fa fa-desktop"></i> It & Software</a></li>
+                <li><a tabindex="-1" href="design.html"><i class="ic fa fa-edit"></i> Design</a></li>
+                <li><a tabindex="-1" href="marketing.html"><span class="ic glyphicon glyphicon-globe"></span> Marketing</a></li>
+                <li><a tabindex="-1" href="photography.html"><span class="ic glyphicon glyphicon-camera"></span> Photography</a></li>
+                <li><a tabindex="-1" href="pgdhrm.html"><span class="ic glyphicon glyphicon-education"></span>PGDHRM</a></li>
+            </ul>
+        </div>
+
+        <div class="txtl">
+            <h2>Language</h2>
+            <p>Optimise your language skills with Alison’s 1000+ hours of interactive courses in English, Spanish, French, Arabic and more.
+                Whether communicating online or in person, Alison’s language courses can give you the vocabulary and grammar to communicate
+                effectively in different languages. From Chinese to Swedish, Alison’s language courses offer students the opportunity to become
+                a speaker of some of the most commonly spoken languages in the world. In each Alison language course, the student will learn the
+                language step-by-step by starting with the basic grammar and pronunciation skills to learning about the culture of that language
+                and how to order food or check-out of a hotel. These language courses will benefit the regular traveller or anyone who would like
+                to expand their language skills or to even improve their existing knowledge of a language.</p>
+
+        </div>
+        <div class="build">
+            <div class="row">
+                <div class="col-md-3"></div>
+                <div class="col-md-3 iyi">
+                    <h2>Increase Your Impact</h2>
+                    <hr>
+                    <h3>The best preparation for tomorrow is doing your best today.</h3>
+                </div>
+                <div class="col-md-1"></div>
+                <div class="col-md-3">
+                    <img src="trainingimages/lbuild.jpg" alt="" class="imgbuild">
+                    <img src="trainingimages/hope2.jpg" alt="" class="img2build">
+                </div>
+                <div class="col-md-2"></div>
+            </div>
+        </div>
+        <div class="">
+            <img src="trainingimages/l3.png" alt="" class="mt3">
+            <div class="wback3">
+                <div class="pt3">
+                    <img src="trainingimages/dutch.png" alt="" class="img3 marleft3"><span class="w"> Dutch</span>
+                    <img src="trainingimages/czech.png" alt="" class="img3 marleft1"><span class="w"> Czech</span>
+                    <img src="trainingimages/spanish.png" alt="" class="img3 marleft1"><span class="w"> Spanish</span>
+                    <img src="trainingimages/french.png" alt="" class="img3 marleft1"><span class="w"> French</span>
+                    <img src="trainingimages/german.png" alt="" class="img3 marleft1"><span class="w"> German</span>
+                    <img src="trainingimages/italian.png" alt="" class="img3 marleft1"><span class="w"> Italian</span>
+                    <img src="trainingimages/portuguese.png" alt="" class="img3 marleft1"><span class="w"> Portuguese</span>
+                    <img src="trainingimages/england.png" alt="" class="img3 marleft1"><span class="w"> English</span>
+                    <img src="trainingimages/russia.png" alt="" class="img3 marleft1"><span class="w"> Russian</span>
+                    <img src="trainingimages/chinese.png" alt="" class="img3 marleft1"><span class="w"> Chinese</span>
+                </div>
+            </div>
+        </div>
+        <div class="wid">
+            <div class="sh1 in" >
+                <img src="trainingimages/l31.png" alt="" width="100%" height="200px">
+                <h4 class="wb tcen">TESOL Certificate, Part 1: Teach English Now!</h4>
+                <table style="margin: 0 auto;">
+                    <tr>
+                        <td class="wb"><i class="fa fa-file-text"></i></td>
+                        <td> 121 Lectures</td>
+                    </tr>
+                    <tr>
+                        <td class="wb"><i class="fa fa-clock-o"></i></td>
+                        <td> 300 hours</td>
+                    </tr>
+                    <tr>
+                        <td class="wb"><i class="material-icons">network_check</i></td>
+                        <td> All Levels</td>
+                    </tr>
+                </table>
+                <button type="submit" name="button" class="btn btn-glass btn-primary btn-glass register">Register</button>
+            </div>
+            <div class="sh1 in marleft1">
+                <img src="trainingimages/l32.png" alt="" width="100%" height="200px">
+                <h4 class="wb tcen">Improve Your English Communication Skills</h4>
+                <table style="margin: 0 auto;">
+                    <tr>
+                        <td class="wb"><i class="fa fa-file-text"></i></td>
+                        <td> 121 Lectures</td>
+                    </tr>
+                    <tr>
+                        <td class="wb"><i class="fa fa-clock-o"></i></td>
+                        <td> 300 hours</td>
+                    </tr>
+                    <tr>
+                        <td class="wb"><i class="material-icons">network_check</i></td>
+                        <td> All Levels</td>
+                    </tr>
+                </table>
+                <button type="submit" name="button" class="btn btn-glass btn-primary btn-glass register">Register</button>
+            </div>
+            <div class="sh1 in marleft1">
+                <img src="trainingimages/l33.png" alt="" width="100%" height="200px">
+                <h4 class="wb tcen">Business English Communication Skills</h4>
+                <table style="margin: 0 auto;">
+                    <tr>
+                        <td class="wb"><i class="fa fa-file-text"></i></td>
+                        <td> 121 Lectures</td>
+                    </tr>
+                    <tr>
+                        <td class="wb"><i class="fa fa-clock-o"></i></td>
+                        <td> 300 hours</td>
+                    </tr>
+                    <tr>
+                        <td class="wb"><i class="material-icons">network_check</i></td>
+                        <td> All Levels</td>
+                    </tr>
+                </table>
+                <button type="submit" name="button" class="btn btn-glass btn-primary btn-glass register">Register</button>
+            </div>
+            <div class="sh1 in marleft1">
+                <img src="trainingimages/l34.png" alt="" width="100%" height="200px">
+                <h4 class="wb tcen">Chinese for Beginners level to Advance Level</h4>
+                <table style="margin: 0 auto;">
+                    <tr>
+                        <td class="wb"><i class="fa fa-file-text"></i></td>
+                        <td> 121 Lectures</td>
+                    </tr>
+                    <tr>
+                        <td class="wb"><i class="fa fa-clock-o"></i></td>
+                        <td> 300 hours</td>
+                    </tr>
+                    <tr>
+                        <td class="wb"><i class="material-icons">network_check</i></td>
+                        <td> All Levels</td>
+                    </tr>
+                </table>
+                <button type="submit" name="button" class="btn btn-glass btn-primary btn-glass register">Register</button>
+            </div>
+        </div>
+
+        <div class="wid">
+            <div class="sh1 sh11 in">
+                <img src="trainingimages/l35.png" alt="" width="100%" height="200px">
+                <h4 class="wb tcen">Dutch</h4>
+                <table style="margin: 0 auto;">
+                    <tr>
+                        <td class="wb"><i class="fa fa-file-text"></i></td>
+                        <td> 121 Lectures</td>
+                    </tr>
+                    <tr>
+                        <td class="wb"><i class="fa fa-clock-o"></i></td>
+                        <td> 300 hours</td>
+                    </tr>
+                    <tr>
+                        <td class="wb"><i class="material-icons">network_check</i></td>
+                        <td> All Levels</td>
+                    </tr>
+                </table>
+                <button type="submit" name="button" class="btn btn-glass btn-primary btn-glass register">Register</button>
+            </div>
+            <div class="sh1 sh11 in marleft1">
+                <img src="trainingimages/l36.png" alt="" width="100%" height="200px">
+                <h4 class="wb tcen">Czech</h4>
+                <table style="margin: 0 auto;">
+                    <tr>
+                        <td class="wb"><i class="fa fa-file-text"></i></td>
+                        <td> 121 Lectures</td>
+                    </tr>
+                    <tr>
+                        <td class="wb"><i class="fa fa-clock-o"></i></td>
+                        <td> 300 hours</td>
+                    </tr>
+                    <tr>
+                        <td class="wb"><i class="material-icons">network_check</i></td>
+                        <td> All Levels</td>
+                    </tr>
+                </table>
+                <button type="submit" name="button" class="btn btn-glass btn-primary btn-glass register">Register</button>
+            </div>
+            <div class="sh1 sh11 in marleft1">
+                <img src="trainingimages/l37.png" alt="" width="100%" height="200px">
+                <h4 class="wb tcen">Spanish</h4>
+                <table style="margin: 0 auto;">
+                    <tr>
+                        <td class="wb"><i class="fa fa-file-text"></i></td>
+                        <td> 121 Lectures</td>
+                    </tr>
+                    <tr>
+                        <td class="wb"><i class="fa fa-clock-o"></i></td>
+                        <td> 300 hours</td>
+                    </tr>
+                    <tr>
+                        <td class="wb"><i class="material-icons">network_check</i></td>
+                        <td> All Levels</td>
+                    </tr>
+                </table>
+                <button type="submit" name="button" class="btn btn-glass btn-primary btn-glass register">Register</button>
+            </div>
+            <div class="sh1 sh11 in marleft1">
+                <img src="trainingimages/l38.png" alt="" width="100%" height="200px">
+                <h4 class="wb tcen">French</h4>
+                <table style="margin: 0 auto;">
+                    <tr>
+                        <td class="wb"><i class="fa fa-file-text"></i></td>
+                        <td> 121 Lectures</td>
+                    </tr>
+                    <tr>
+                        <td class="wb"><i class="fa fa-clock-o"></i></td>
+                        <td> 300 hours</td>
+                    </tr>
+                    <tr>
+                        <td class="wb"><i class="material-icons">network_check</i></td>
+                        <td> All Levels</td>
+                    </tr>
+                </table>
+                <button type="submit" name="button" class="btn btn-glass btn-primary btn-glass register">Register</button>
+            </div>
+        </div>
+
+        <div class="wid martop">
+            <div class="sh1 sh11 in">
+                <img src="trainingimages/l39.png" alt="" width="100%" height="200px">
+                <h4 class="wb tcen">German</h4>
+                <table style="margin: 0 auto;">
+                    <tr>
+                        <td class="wb"><i class="fa fa-file-text"></i></td>
+                        <td> 121 Lectures</td>
+                    </tr>
+                    <tr>
+                        <td class="wb"><i class="fa fa-clock-o"></i></td>
+                        <td> 300 hours</td>
+                    </tr>
+                    <tr>
+                        <td class="wb"><i class="material-icons">network_check</i></td>
+                        <td> All Levels</td>
+                    </tr>
+                </table>
+                <button type="submit" name="button" class="btn btn-glass btn-primary btn-glass register">Register</button>
+            </div>
+            <div class="sh1 sh11 in marleft1">
+                <img src="trainingimages/l40.png" alt="" width="100%" height="200px">
+                <h4 class="wb tcen">Italian</h4>
+                <table style="margin: 0 auto;">
+                    <tr>
+                        <td class="wb"><i class="fa fa-file-text"></i></td>
+                        <td> 121 Lectures</td>
+                    </tr>
+                    <tr>
+                        <td class="wb"><i class="fa fa-clock-o"></i></td>
+                        <td> 300 hours</td>
+                    </tr>
+                    <tr>
+                        <td class="wb"><i class="material-icons">network_check</i></td>
+                        <td> All Levels</td>
+                    </tr>
+                </table>
+                <button type="submit" name="button" class="btn btn-glass btn-primary btn-glass register">Register</button>
+            </div>
+            <div class="sh1 sh11 in marleft1">
+                <img src="trainingimages/l41.png" alt="" width="100%" height="200px">
+                <h4 class="wb tcen">Portuguese</h4>
+                <table style="margin: 0 auto;">
+                    <tr>
+                        <td class="wb"><i class="fa fa-file-text"></i></td>
+                        <td> 121 Lectures</td>
+                    </tr>
+                    <tr>
+                        <td class="wb"><i class="fa fa-clock-o"></i></td>
+                        <td> 300 hours</td>
+                    </tr>
+                    <tr>
+                        <td class="wb"><i class="material-icons">network_check</i></td>
+                        <td> All Levels</td>
+                    </tr>
+                </table>
+                <button type="submit" name="button" class="btn btn-glass btn-primary btn-glass register">Register</button>
+            </div>
+            <div class="sh1 sh11 in marleft1">
+                <img src="trainingimages/l42.png" alt="" width="100%" height="200px">
+                <h4 class="wb tcen">Russian</h4>
+                <table style="margin: 0 auto;">
+                    <tr>
+                        <td class="wb"><i class="fa fa-file-text"></i></td>
+                        <td> 121 Lectures</td>
+                    </tr>
+                    <tr>
+                        <td class="wb"><i class="fa fa-clock-o"></i></td>
+                        <td> 300 hours</td>
+                    </tr>
+                    <tr>
+                        <td class="wb"><i class="material-icons">network_check</i></td>
+                        <td> All Levels</td>
+                    </tr>
+                </table>
+                <button type="submit" name="button" class="btn btn-glass btn-primary btn-glass register">Register</button>
+            </div>
+        </div>
+        <div class="foot1 dsm2 martop">
+            <p>Copyright &copy; 2018 gradeup, Inc.</p>
+        </div>
+    </body>
+</html>

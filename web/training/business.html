@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link rel="stylesheet" href="trainingcss/com.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <title>Business</title>
+  <style media="screen">
+    .top{
+      background: rgb(0,120,149);
+      height: 50px;
+      width: 100%;
+      color: #FFF;
+      text-align: right;
+      padding: 10px;
+    }
+    .fa1{
+      color: #FFF;
+      background: linear-gradient(rgb(95,129,216),rgb(44,68,140));
+      padding: 9px;
+      border-radius: 50%;
+      margin-left: 2px;
+      transition: 1s;
+    }
+    .fa1:hover{
+      background: linear-gradient(rgb(44,68,140),rgb(95,129,216));
+      color: #0F0;
+      text-decoration: none;
+    }
+    .fa2{margin-right: 27px;}
+    .s{
+      margin-right: 20px;
+      font-size: 18px;
+    }
+    .busimg{
+      width: 100%;
+      height: 300px;
+    }
+    .busname{
+      background: rgba(0,85,103,0.6);
+      height: 250px;
+      width: 300px;
+      position: absolute;
+      top: 10%;
+      left: 5%;
+      padding: 20px;
+      text-align: center;
+    }
+    .wss{text-shadow: 2px 2px 8px #FFF;}
+    .wc{color: #FFF;}
+    .bc{color: rgb(80,0,84);}
+    .mar{
+      position: relative;
+      top: 25px;
+    }
+    .wbb{
+      color: rgb(0,85,136);
+      font-size: 22px;
+      border-bottom: 1px solid rgb(0,85,136);
+      width: fit-content;
+      margin-left: 60px;
+    }
+    .bussmar{
+      margin: 20px;
+      padding: 20px;
+    }
+    .marginin{
+      margin-left: 10px;
+    }
+    .fontin{font-size: 18px; color: rgb(0,66,121);}
+    .font2{font-size: 18px;}
+    .ico{
+      font-size: 36px;
+      margin-top: 5px;
+    }
+    .stumar{
+      margin-left: 10%;
+      box-shadow: 2px 2px 9px 2px rgba(0,0,0,0.4);
+      border-top-left-radius: 8px;
+      border-top-right-radius: 8px;
+    }
+    .in{display: inline-block;}
+    .stuback{
+      background: rgb(67,200,248);
+      padding: 5px 25px;
+      border-top-left-radius: 8px;
+      border-top-right-radius: 8px;
+    }
+    .course{
+
+    }
+    .mare{margin-left: 80px;}
+    .upimg{
+      width: 250px;
+      height: 100px;
+      padding-top: 10px;
+    }
+    .cen{
+      display: block;
+      margin: 0 auto;
+    }
+    .mar8{margin-left: 10%;}
+    .mar9{margin-left: 5%;}
+    .one{background: rgb(227,246,253);}
+    .tab{
+      box-shadow: 2px 2px 8px 1px rgb(0,0,0,0.3);
+      width: 370px;
+      border-radius: 8px;
+    }
+    .tab2{
+      padding: 10px;
+      text-align: center;
+    }
+    .tmp{
+      border-top-left-radius: 8px;
+      border-top-right-radius: 8px;
+    }
+    .col-md-4{margin-bottom: 10px;}
+    .da2{
+      position: absolute;
+      top: 15px;
+      left: 10px;
+    }
+    .link1{
+      position: fixed;
+      top: 10px;
+      right: -100px;
+      font-size: 18px;
+      color: #FFF;
+      background: #4CAF50;
+      width: 130px;
+      padding-bottom: -1px;
+      transition: 0.5s;
+      z-index: 1;
+    }
+    .link1:hover{
+      transform: translateX(-80px);
+      color: #FFF;
+    }
+    .link2{
+      background: #F00;
+      font-size: 18px;
+      padding: 0 10px;
+    }
+    .txt1{padding-bottom: 5px;}
+    .btn-glass {
+      margin-top: 15px;
+      flex-grow: 1;
+      text-align: center;
+      display: inline-block;
+      color: rgba(255, 255, 255, 0.7);
+      text-decoration: none;
+      padding: 0.5em 0.8em;
+      font-family: Lato;
+      font-weight: 300;
+      border: 1px dotted transparent;
+      letter-spacing: 0.98pt;
+      text-transform: uppercase;
+      transition: background-position 2s cubic-bezier(0, 1, 0, 1), border-color 500ms, background-color 500ms;
+      position: relative;
+      background-attachment: fixed, scroll;
+      background-size: 100vw 100vh, cover;
+      background-position: center center, 0 0;
+      background-image: repeating-linear-gradient(-45deg, rgba(255, 255, 255, 0) 8%, rgba(255, 255, 255, 0.075) 10%, rgba(255, 255, 255, 0.075) 14%, rgba(255, 255, 255, 0.15) 14%, rgba(255, 255, 255, 0.15) 15%, rgba(255, 255, 255, 0.075) 17%, rgba(255, 255, 255, 0) 30%, rgba(255, 255, 255, 0) 36%, rgba(255, 255, 255, 0.075) 40%, rgba(255, 255, 255, 0.15) 42%, rgba(255, 255, 255, 0) 43%, rgba(255, 255, 255, 0) 55%, rgba(255, 255, 255, 0.075) 60%, rgba(255, 255, 255, 0.075) 66%, rgba(255, 255, 255, 0.15) 66%, rgba(255, 255, 255, 0.075) 70%, rgba(255, 255, 255, 0) 75%, rgba(255, 255, 255, 0) 100%), radial-gradient(ellipse farthest-corner, transparent, rgba(0, 0, 0, 0.2) 110%);
+    }
+    .btn-glass:hover {
+      background-position: -100vw 0, 0 0;
+    }
+    .btn-glass:active {
+      background-position: -75vw 0, 0 0;
+      border-style: solid;
+    }
+    .in{display: inline-block;}
+  </style>
+</head>
+<body>
+  <div class="top">
+    <span>Follow Us<a href="#" class="fa fa-facebook fa1"></a>
+      <a href="#" class="fa fa-twitter fa1"></a><a href="#" class="fa fa-google fa1 fa2"></a></span>
+  </div>
+  <a class="link1" href="training.html" style="text-decoration: none;">
+    <i class="fa fa-caret-left link2"></i> <span class="txt1"> Training</span>
+  </a>
+  <div class="dropdown da2">
+  <span class="dropdown-toggle" data-toggle="dropdown">
+    <span class="">
+      <a href="#"><span class="glyphicon glyphicon-th wr"></span></a>
+      <span style="color: #fff; cursor: pointer;"> All Courses</span>
+    </span>
+  </span>
+  <ul class="dropdown-menu w">
+    <li><a tabindex="-1" href="development.html"><i class="ic fa fa-file-code-o" style="font-size:15px"></i> Development</a></li>
+    <li><a tabindex="-1" href="it.html"><i class="ic fa fa-desktop"></i> It & Software</a></li>
+    <li><a tabindex="-1" href="design.html"><i class="ic fa fa-edit"></i> Design</a></li>
+    <li><a tabindex="-1" href="marketing.html"><span class="ic glyphicon glyphicon-globe"></span> Marketing</a></li>
+    <li><a tabindex="-1" href="pgdhrm.html"><span class="ic glyphicon glyphicon-education"></span>PGDHRM</a></li>
+    <li><a tabindex="-1" href="photography.html"><span class="ic glyphicon glyphicon-camera"></span> Photography</a></li>
+    <li><a tabindex="-1" href="language.html"><i class="ic fa fa-comments"></i> Language</a></li>
+  </ul>
+</div>
+  <div class="">
+    <img src="trainingimages/bus.png" alt="" class="busimg">
+    <div class="busname">
+      <h3 class="wc">Business & Management Degrees</h3>
+      <h4 class="bc mar wss">Ranks 2<sup>nd</sup>in Asia and 18<sup>th</sup>in the world</h4>
+      <ul class="wc  mar">
+        <li><h4>Undergraduate Studies</h4></li>
+        <li><h4>Postgraduate Studies</h4></li>
+      </ul>
+    </div>
+  </div>
+  <div class="bussmar">
+    <p class="wbb">A series of credit-eligible courses recognized by industry.</p>
+    <p class="wbbb">Gain an advantage by learning the key business essentials through this comprehensive online
+      MicroMasters Program, covering all core management disciplines.</p>
+      <p>Understanding the managerial context of decision making is critical to being a successful manager.
+        The MicroMasters Program in management from the Indian Institute of Management Bangalore, aims to provide
+        the learner with the perfect learning pathway to develop core competencies across six management disciplines:</p>
+        <ul>
+          <li>Accounting</li>
+          <li>Finance</li>
+          <li>Operations Management</li>
+          <li>People Management</li>
+          <li>Marketing</li>
+          <li>Business Strategy</li>
+        </ul>
+        <h3>Job Outlook</h3>
+        <p>Career opportunities include: Project Managers, Team Leads, Programme Managers,
+          First time managers, Mid-career professionals, Entrepreneurs</p>
+        <h3>Oracle Consulting</h3>
+        <p><i>"The MicroMasters program of IIMB comes at the right time to help managers to gain a good
+          understanding of other disciplines such as Accounting, HR, Finance, Operations, Marketing and Strategy. 
+          The online courses help them to pace their own learning and get an opportunity to do an accelerated Advanced
+          Management Program in campus. The knowledge gained from the courses and the program will go long way in helping
+          managers become more effective and accelerate their personal growth."</i></p>
+        <h5>— Nagabhushana Urala , Vice President, Oracle Consulting, EMEA</h5>
+  </div>
+  <div class="cards">
+    <div class="in mar8">
+      <div class="course">
+        <div class="in stumar">
+          <span class="in stuback wc"><span class="glyphicon glyphicon-education ico"></span>
+          <h3 class="in">Undergraduation Studies</h3></span>
+          <a href="#"><div class="one">
+            <img src="trainingimages/acc.png" alt="" class="upimg cen"><br>
+            <h4 class="in fontin mare">Accounting Degrees</h4><i class="fa fa-arrow-circle-o-right in marginin fontin"></i>
+          </div></a>
+          <a href="#"><div class="">
+            <img src="trainingimages/bu.png" alt="" class="upimg cen">
+            <h4 class="trainingimages/in fontin mare">Business Degrees</h4><i class="fa fa-arrow-circle-o-right in marginin fontin"></i>
+          </div></a>
+          <a href="#"><div class="one">
+            <img src="trainingimages/eco.png" alt="" class="upimg cen">
+            <h4 class="in fontin mare">Economics Degrees</h4><i class="fa fa-arrow-circle-o-right in marginin fontin"></i>
+          </div></a>
+          <a href="#"><div class="">
+            <img src="trainingimages/fin.png" alt="" class="upimg cen">
+            <h4 class="in fontin mare">Finance Degrees</h4><i class="fa fa-arrow-circle-o-right in marginin fontin"></i>
+          </div></a>
+          <a href="#"><div class="one">
+            <img src="trainingimages/hotel.png" alt="" class="upimg cen">
+            <h4 class="in fontin mare">Hospitality Management</h4><i class="fa fa-arrow-circle-o-right in marginin fontin"></i>
+          </div></a>
+        </div>
+    </div>
+  </div>
+    <div class="in">
+      <div class="in stumar">
+        <span class="in stuback wc"><span class="glyphicon glyphicon-education ico"></span>
+        <h3 class="in">Postgraduation Studies</h3></span>
+        <a href="#"><div class="one">
+          <img src="trainingimages/acc.png" alt="" class="upimg cen"><br>
+          <h4 class="in fontin mare">Masters in Accounting</h4><i class="fa fa-arrow-circle-o-right in marginin fontin"></i>
+        </div></a>
+        <a href="#"><div class="">
+          <img src="trainingimages/bu1.png" alt="" class="upimg cen">
+          <h4 class="in fontin mare">Business Degrees</h4><i class="fa fa-arrow-circle-o-right in marginin fontin"></i>
+        </div><a/>
+        <a href="#"><div class="one">
+          <img src="trainingimages/dm.png" alt="" class="upimg cen">
+          <h4 class="in fontin" style="margin-left: 50px;">Master in Digital Marketing</h4><i class="fa fa-arrow-circle-o-right in marginin fontin"></i>
+        </div></a>
+        <a href="#"><div class="">
+          <img src="trainingimages/eco2.png" alt="" class="upimg cen">
+          <h4 class="in fontin mare">Master in Economics</h4><i class="fa fa-arrow-circle-o-right in marginin fontin"></i>
+        </div></a>
+        <a href="#"><div class="one">
+          <img src="trainingimages/eco2.png" alt="" class="upimg cen">
+          <h4 class="in fontin" style="margin-left: 50px;">Master in HR Management</h4><i class="fa fa-arrow-circle-o-right in marginin fontin"></i>
+        </div></a>
+      </div>
+      </div>
+    <div class="in mar9">
+      <div class="tab tab1">
+        <table class="table table-striped">
+          <tr>
+            <td colspan="3" class="tmp" style="text-align: center; background: rgb(0,85,136); color: #FFF;">The MicroMasters Program</td>
+          </tr>
+          <tr>
+            <td><i class="fa fa-clock-o"></i></td>
+            <td>Average Length:</td>
+            <td> 5-9 weeks per course</td>
+          </tr>
+          <tr>
+            <td><i class="fa fa-toggle-on"></i></td>
+            <td>Effort:</td>
+            <td>4-6 hours per week, per course</td>
+          </tr>
+          <tr>
+            <td><i class="fa fa-book"></i></td>
+            <td>Number Of Courses:</td>
+            <td>6 Courses in Program</td>
+          </tr>
+          <tr>
+            <td><span class="glyphicon glyphicon-education"></span></td>
+            <td>Subject:</td>
+            <td> Economics & Finance, Business & Management, Social Sciences, Data Analysis & Statistics</td>
+          </tr>
+          <tr>
+            <td><i class="fa fa-institution"></i></td>
+            <td>Institution:</td>
+            <td>Indian Institute of Management Bangalore</td>
+          </tr>
+          <tr>
+            <td><i class="fa fa-comments-o"></i></td>
+            <td>Language:</td>
+            <td>English</td>
+          </tr>
+          <tr>
+            <td><i class="fa fa-file-video-o"></i></td>
+            <td>Video Transcripts:</td>
+            <td>Hindi, English</td>
+          </tr>
+          <tr>
+            <td><i class="fa fa-tag"></i></td>
+            <td>Price (USD):</td>
+            <td><strike>$900 USD</strike> $810 USD for the entire program.
+    You save $90 USD.</td>
+          </tr>
+        </table>
+      </div>
+      <div class="tab tab2">
+        <h4>What is a MicroMasters Program?</h4>
+        <p>Developed to advance a career and born from Master's programs of leading universities,
+           higher-level courses recognized by companies for
+            real job relevancy, and may accelerate a Master's degree.</p>
+      </div>
+      <button type="submit" name="button" class="btn btn-glass btn-primary btn-glass register register2">
+        Register for MicroMaster Program
+        <i class="fa fa-arrow-circle-o-right in marginin font2"></i></button>
+    </div>
+  </div>
+</div>
+<div class="foot1 martop">
+  <p>Copyright &copy; 2018 gradeup, Inc.</p>
+</div>
+</body>
+</html>

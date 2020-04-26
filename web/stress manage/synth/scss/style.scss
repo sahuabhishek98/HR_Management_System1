@@ -1,0 +1,591 @@
+@import "compass/css3";
+
+*, *:before, *:after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+html, body {
+  font-size: 62.5%;
+  height: 100%;
+}
+body {
+  background: #CEE5D5;
+  cursor: all-scroll;
+}
+$subPixel: 0.05rem;
+$mainColor: #334A5C;
+$midColor: mix(black, $mainColor, 15%);
+$lightColor: #4A6473;
+$semiLight: mix(black, $lightColor, 10%);
+$lightGreen: #79AFA9;
+$width: 80rem;
+$sideWidth: 20rem;
+
+$bottomSideHeight: 4rem;
+$bottomAngle: 20deg;
+$bottomSinW: sin($bottomAngle);
+$bottomCosH: cos($bottomAngle);
+$bottomHeight: $bottomCosH*$bottomSideHeight;
+$bottomPartWidth: $bottomSideHeight*$bottomSinW;
+
+$bigWidth: $width + $bottomPartWidth*2;
+$bigHeight: $sideWidth + $bottomPartWidth*2;
+
+$midHeight: 0.6rem;
+
+$topSideHeight: 1.5rem;
+$topAngle: 20deg;
+$topSinW: sin($topAngle);
+$topCosH: cos($topAngle);
+$topHeight: $topCosH*$topSideHeight;
+$topPartWidth: $topSideHeight*$topSinW;
+
+$PBSideHeight: 2.5rem;
+$PBAngle: 20deg;
+$PBSinW: sin($PBAngle);
+$PBCosH: cos($PBAngle);
+$PBHeight: $PBCosH*$PBSideHeight;
+$PBPartWidth: $PBSideHeight*$PBSinW;
+$topPlatformSideW: $sideWidth + $topPartWidth*2;
+$PBSideWidth: $topPlatformSideW*0.3;
+$PBAngledSideWidth: $PBSideWidth + $PBPartWidth;
+
+$PFLSideWidth: $topPlatformSideW*0.7 - $PBPartWidth*2;
+$PFLSPattern: $PFLSideWidth * 0.035;
+
+$panelTopW: $width + $topPartWidth*2 - $PBPartWidth*2;
+$PFLWidth: ($width + $topPartWidth*2 - $PBPartWidth*2) * 0.15;
+$PFRWidth: $PFLWidth/4;
+$keysWidth: $panelTopW - $PFLWidth - $PFRWidth;
+
+$keyHeight: 1rem;
+$keyWidth: $keysWidth / 25;
+$numOfKeys: 20;
+$keyMargin: $keysWidth / 5 / ($numOfKeys - 1);
+
+// Z VALUES
+$bottomZ: -10rem;
+$midZ: $bottomZ + $bottomHeight;
+$topZ: $midZ + $midHeight;
+$PBZ: $topZ + $topHeight;
+
+// ANIMS
+$btmATime: 1s;
+$midDelay: $btmATime;
+$midATime: 0.7s;
+$topDelay: $midATime + $midDelay;
+$topATime: 1s;
+$panelDelay: $topATime + $topDelay;
+$panelATime: 0.7s;
+$keysDelay: $panelATime + $panelDelay;
+$keysATime: 1s;
+
+@mixin platform($Z, $rotate: 0, $partW: 0, $bgColor: $mainColor, $SW: $sideWidth, $fullW: $width, $partH: 0) {
+  @if $partH == 0 {
+    $partH: $partW*2;
+  }
+  position: absolute;
+  left: -$partW;
+  top: -$partW;
+  width: $fullW + $partW*2;
+  height: $SW + $partH;
+  background-color: $bgColor !important;
+  transform: translateZ($Z) rotateY($rotate);
+}
+
+@mixin bottom($partW: 0) {
+  position: absolute;
+  left: -$partW;
+  top: -$partW;
+  $W: if($partW == 0, 0px, $partW*2);
+  $H: if($partW == 0, 0px, $partW*2);
+  width: calc(100% + #{$W});
+  height: calc(100% + #{$W});
+  transform: rotateX(180deg);
+}
+@mixin top($Z, $partW: 0, $addW: 0, $addH: 0) {
+  position: absolute;
+  left: -$partW;
+  top: -$partW;
+  $W: if($partW == 0, 0px, $partW*2);
+  width: calc(100% + #{$W});
+  @if $addW != 0 {
+    width: calc(100% + #{$addW});
+  }
+  $H: if($partW == 0, 0px, $partW*2);
+  height: calc(100% + #{$W});
+  @if $addH != 0 {
+    height: calc(100% + #{$addH});
+  }
+  transform: translateZ($Z);
+}
+@mixin side {
+  position: absolute;
+  transform-origin: 50% 100%;
+}
+
+@mixin sideLeft($H, $angle: 0, $partW: 0, $SW: $sideWidth) {
+  left: $SW/-2 - $partW;
+  top: 50%;
+  margin-top: -$H;
+  width: $SW;
+  height: $H;
+  transform: rotate(-90deg) rotateX((90deg - $angle) * -1) rotateY(180deg);
+}
+@mixin sideFront($H, $angle: 0, $partW: 0) {
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: $H;
+  transform: rotateX((90deg + $angle) * -1);
+}
+@mixin sideRight($H, $angle: 0, $partW: 0, $SW: $sideWidth) {
+  right: $SW/-2 - $partW;
+  top: 50%;
+  margin-top: -$H;
+  width: $SW;
+  height: $H;
+  transform: rotate(90deg) rotateX((90deg - $angle) * -1) rotateY(180deg);
+}
+@mixin sideBack($H, $angle : 0, $partW: 0) {
+  left: 0;
+  top: -$H - $partW;
+  width: 100%;
+  height: $H;
+  transform: rotateY(180deg) rotateX(90deg - $angle);
+}
+
+@mixin allSides($H, $angle: 0, $partW: 0, $SW: $sideWidth) {
+  &.m--left {
+    @include sideLeft($H, $angle, $partW, $SW);
+  }
+
+  &.m--front {
+    @include sideFront($H, $angle, $partW);
+  }
+
+  &.m--right {
+    @include sideRight($H, $angle, $partW, $SW);
+  }
+
+  &.m--back {
+    @include sideBack($H, $angle, $partW);
+  }
+}
+
+@mixin sideCorners($W, $H, $color: $mainColor, $revW: 0) {
+  $defaultColor: $color;
+  $reverseColor: transparent;
+  $leftShift: $W;
+  @if $W == 0 {
+    $defaultColor: transparent;
+    $reverseColor: $mainColor;
+    $leftShift: $revW;
+  }
+  &:before, &:after {
+    content: "";
+    position: absolute;
+    display: block;
+    border-style: solid;
+    background-color: transparent !important;
+  }
+
+  &:before {
+    left: -$leftShift;
+    top: 0;
+    border-width: 0 $W $H $revW;
+    border-color: transparent $color $reverseColor transparent;
+  }
+
+  &:after {
+    right: -$leftShift;
+    top: 0;
+    border-width: $H $W 0 $revW;
+    border-color: $color transparent transparent $reverseColor;
+  }
+}
+.demo-cont {
+  position: relative;
+  height: 100vh;
+  perspective: 2000px;
+}
+.demo {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  margin-left: $width/-2;
+  margin-top: $sideWidth/-2;
+  width: $width;
+  height: $sideWidth;
+  transform-style: preserve-3d;
+  transform: rotateX(75deg) rotateZ(-50deg);
+  will-change: transform;
+  user-select: none;
+  
+  div, div:before, div:after {
+    //backface-visibility: hidden;
+    transform-style: preserve-3d;
+    background-color: inherit;
+  }
+  
+  &__btm {
+    @include platform($bottomZ, 0);
+    transform: translateZ($bottomZ*2);
+    opacity: 0;
+    animation: btmAnim $btmATime forwards;
+    
+    &-bottom {
+      @include bottom;
+    }
+    
+    &-top {
+      @include top($bottomHeight - $subPixel, $bottomPartWidth);
+    }
+    
+    &-side {
+      @include side;
+      @include allSides($bottomSideHeight, $bottomAngle);
+      @include sideCorners($bottomPartWidth, $bottomSideHeight);
+    }
+  }
+
+  &__mid {
+    @include platform($midZ, 0, 0, $midColor);
+    transform: translateZ(-$midZ*2);
+    opacity: 0;
+    animation: midAnim $midATime $midDelay forwards;
+    
+    &-bottom {
+      @include bottom;
+    }
+    
+    &-top {
+      @include top($midHeight);
+    }
+    
+    &-side {
+      @include side;
+      @include allSides($midHeight);
+    }
+  }
+
+  &__top {
+    @include platform($topZ + $topHeight, 180deg, $topPartWidth, $mainColor);
+    $topSideWidth: $sideWidth + $topPartWidth*2;
+    transform: translateZ(($topZ + $topHeight)*-1.5) rotateY(180deg);
+    opacity: 0;
+    animation: topAnim $topATime $topDelay forwards;
+    
+    &-bottom {
+      @include bottom;
+    }
+    
+    &-top {
+      @include top($topHeight - $subPixel, $topPartWidth);
+    }
+    
+    &-side {
+      @include side;
+      @include allSides($topSideHeight, $topAngle, 0, $topSideWidth);
+      @include sideCorners($topPartWidth, $topSideHeight);
+    }
+  }
+  
+  &__panelBack {
+    @include platform($PBZ + $PBHeight, 180deg, 0, $lightColor, $PBSideWidth, $width + $topPartWidth*2 - $PBPartWidth*2);
+    left: $PBPartWidth/2;
+    top: $PBPartWidth/2;
+    transform: translateZ(($PBZ + $PBHeight)*-1.5) rotateY(180deg);
+    opacity: 0;
+    animation: panelAnim $panelATime $panelDelay forwards;
+    
+    &-bottom {
+      @include bottom;
+      
+      &:before {
+        content: "";
+        position: absolute;
+        left: 0;
+        top: 2rem;
+        width: 100%;
+        height: 0.2rem;
+        background: #243446 !important;
+        transform: translateZ(0.1rem);
+      }
+      
+      &:after {
+        content: "";
+        position: absolute;
+        left: $PFRWidth;
+        top: 0.5rem;
+        width: $keysWidth;
+        height: 0.7rem;
+        background: $lightGreen !important;
+        transform: translateZ(0.1rem);
+      }
+    }
+    
+    &-top {
+      @include top($PBHeight, $PBPartWidth, 0, $PBPartWidth);
+    }
+    
+    &-side {
+      @include side;
+      @include allSides($PBSideHeight, $PBAngle, 0, $PBSideWidth);
+      @include sideCorners($PBPartWidth, $PBSideHeight, $lightColor);
+      
+      &.m--left:after {
+        display: none;
+      }
+      
+      &.m--front {
+        @include sideFront($PBSideHeight, 0);
+        background: $semiLight;
+      }
+      
+      &.m--right:before {
+        display: none;
+      }
+    }
+  }
+  
+  &__panelFrontL {
+    @include platform($PBZ + $PBHeight, 180deg, 0, $lightColor, $PFLSideWidth, $PFLWidth);
+    left: $PBPartWidth/2;
+    top: $PBSideWidth + $PBPartWidth/2;
+    transform: translateZ(($PBZ + $PBHeight)*-1.5) rotateY(180deg);
+    opacity: 0;
+    animation: panelAnim $panelATime $panelDelay forwards;
+    
+    &-bottom {
+      @include bottom;
+      
+      &:after {
+        content: "";
+        position: absolute;
+        left: 0;
+        top: 15%;
+        width: 100%;
+        height: 3.5%;
+        background: #283646 !important;
+        color: #283646;
+        box-shadow: 0 $PFLSPattern*2, 0 $PFLSPattern*4, 0 $PFLSPattern*6, 0 $PFLSPattern*8, 0 $PFLSPattern*10, 0 $PFLSPattern*12, 0 $PFLSPattern*14, 0 $PFLSPattern*16, 0 $PFLSPattern*18;
+        transform: translateZ(0.1rem);
+      }
+    }
+    
+    &-top {
+      @include top($PBHeight, 0, $PBPartWidth, $PBPartWidth);
+      top: 0;
+    }
+    
+    &-side {
+      @include side;
+      @include allSides($PBSideHeight, $PBAngle, 0, $PFLSideWidth);
+      @include sideCorners($PBPartWidth, $PBSideHeight, $lightColor);
+      
+      &.m--left {
+        @include sideLeft($PBSideHeight, 0, 0, $PFLSideWidth);
+        background: $semiLight;
+      }
+      
+      &.m--back {
+        @include sideBack($PBSideHeight, 0);
+      }
+      
+      &.m--left:before,
+      &.m--right:after,
+      &.m--back:after,
+      &.m--front:before {
+        display: none;
+      }
+    }
+  }
+  
+  &__panelFrontR {
+    @include platform($PBZ + $PBHeight, 180deg, 0, $lightColor, $PFLSideWidth, $PFRWidth);
+    left: auto;
+    right: $PBPartWidth/2;
+    top: $PBSideWidth + $PBPartWidth/2;
+    transform: translateZ(($PBZ + $PBHeight)*-1.5) rotateY(180deg);
+    opacity: 0;
+    animation: panelAnim $panelATime $panelDelay forwards;
+    
+    &-bottom {
+      @include bottom;
+    }
+    
+    &-top {
+      @include top($PBHeight, 0, $PBPartWidth, $PBPartWidth);
+      top: 0;
+      left: -$PBPartWidth;
+    }
+    
+    &-side {
+      @include side;
+      @include allSides($PBSideHeight, $PBAngle, 0, $PFLSideWidth);
+      @include sideCorners($PBPartWidth, $PBSideHeight, $lightColor);
+      
+      &.m--right {
+        @include sideRight($PBSideHeight, 0, 0, $PFLSideWidth);
+        background: $semiLight;
+        transform: rotate(90deg) rotateX(-90deg) rotateY(180deg) translateZ(-0.2rem);
+        
+        &:before {
+          color: $semiLight;
+        }
+      }
+      
+      &.m--back {
+        @include sideBack($PBSideHeight, 0);
+      }
+
+      &.m--left:before,
+      &.m--right:after,
+      &.m--back:before,
+      &.m--front:after {
+        display: none;
+      }
+    }
+  }
+  
+  &__panelKeys {
+    position: absolute;
+    left: $PBPartWidth/2 + $PFLWidth;
+    top: $PBSideWidth + $PBPartWidth/2;
+    width: $keysWidth;
+    height: $PFLSideWidth;
+    transform: translateZ($PBZ);
+    
+    
+    &-key {
+      @include platform(0, 0, 0, #fff, $PFLSideWidth, $keyWidth);
+      cursor: pointer;
+      transform-origin: 50% 0;
+      transform: translateZ(5rem);
+      opacity: 0;
+      
+      .demo.ready & {
+        opacity: 1;
+        transform: translateZ(0);
+      }
+      
+      @for $i from 1 through $numOfKeys {
+        &:nth-child(#{$i}) {
+          left: ($i - 1) * ($keyWidth + $keyMargin);
+          animation: keyAnim $panelATime (($i - 1) * 0.05s + $panelDelay) forwards;
+        }
+      }
+    
+      &.pressed {
+        animation: keyPress 1s;
+      }
+    
+      &-bottom {
+        @include bottom;
+      }
+
+      &-top {
+        @include top($keyHeight);
+      }
+
+      &-side {
+        @include side;
+        @include allSides($keyHeight, 0, 0, $PFLSideWidth);
+        background: #cfcfcf !important;
+      }
+    }
+  }
+  
+}
+
+.heading {
+  position: absolute;
+  left: 50%;
+  bottom: 0rem;
+  transform: translate(-50%, -50%) rotate(180deg) translateZ(0.1rem);
+  color: $lightGreen;
+  text-transform: uppercase;
+  font-size: 2rem;
+}
+
+@keyframes keyPress {
+  50% {
+    transform: rotateX(-3deg);
+  }
+  100% {
+    transform: rotateX(0);
+  }
+}
+
+@keyframes btmAnim {
+  to {
+    transform: translateZ($bottomZ);
+    opacity: 1;
+  }
+}
+@keyframes midAnim {
+  to {
+    transform: translateZ($midZ);
+    opacity: 1;
+  }
+}
+@keyframes topAnim {
+  to {
+    transform: translateZ($topZ + $topHeight) rotateY(180deg);
+    opacity: 1;
+  }
+}
+@keyframes panelAnim {
+  to {
+    transform: translateZ($PBZ + $PBHeight) rotateY(180deg);
+    opacity: 1;
+  }
+}
+@keyframes keyAnim {
+  to {
+    transform: translateZ(0);
+    opacity: 1;
+  }
+}
+
+.my-links {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%) translateZ(0.1rem);
+  
+  a {
+    text-align: center;
+    color: #fff;
+    display: block;
+    margin: 1rem 0;
+    font-size: 2rem;
+  }
+}
+
+.you-can {
+  position: absolute;
+  left: 0.5rem;
+  top: 0.5rem;
+  font-size: 1.5rem;
+  color: #000;
+  user-select: none;
+}
+
+.rerun {
+  position: absolute;
+  right: 0.5rem;
+  background: transparent;
+  top: 0.5rem;
+  border: none;
+  font-size: 2rem;
+  color: #000;
+  cursor: pointer;
+  user-select: none;
+  
+  &:focus {
+    outline: none;
+  }
+}

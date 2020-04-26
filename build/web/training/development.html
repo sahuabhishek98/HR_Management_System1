@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link rel="stylesheet" href="trainingcss/com.css">
+  <link rel="stylesheet" href="stylesheets/buttons.css" type="text/css" media="screen">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <title>Document</title>
+  <style media="screen">
+  .cards{
+    margin: 50px auto;
+    max-width: 1400px;
+    text-align: center;
+  }
+    .img11{
+      width: 100%;
+      height: 250px;
+    }
+    .devb{
+      width: 100%;
+      height: 250px;
+      position: absolute;
+      top: 0;
+      left: 0;
+      background: rgba(0,0,0,0.6);
+    }
+    .devh{
+      position: absolute;
+      transform: translate(-50%, -50%);
+      color: #FFF;
+    }
+    .devh1{top: 10%; left: 50%;}
+    .devh2{top: 20%; left: 31%;}
+    .devh3{top: 20%; right: 4%;}
+    .mar{padding: 20px; margin-left: 5%;}
+    .mar2{margin-top: -20px;}
+    .gr{
+      width: 320px;
+      text-align: center;
+      margin-left: 20px;
+    }
+    .back{
+      background: #f1f1f1;
+      box-shadow: 2px 2px 8px 2px gray;
+      min-height: 380px;
+      border-top-left-radius: 8px;
+      border-top-right-radius: 8px;
+      margin-top: 20px;
+    }
+    .back:hover{
+      box-shadow: 1px 1px 4px 1px rgba(0,0,0,0.7);
+    }
+    .cen{text-align: center;}
+    .img111{
+      width: 100%;
+      border-top-left-radius: 8px;
+      border-top-right-radius: 8px;
+    }
+    .textcol{color: rgb(5,41,117);}
+    .pdpd{
+      background: #999;
+      color: #FFF;
+      text-shadow: 2px 2px 3px gray;
+      text-align: center;
+      box-shadow: 2px 2px 4px 2px gray;
+      width: fit-content;
+      padding: 4px 20px 4px 20px;
+      margin: 0 auto;
+    }
+    .sdmar{margin-top: 20px;}
+    .spe{
+      position: relative;
+      top: 10px;
+    }
+    .link1{
+      position: fixed;
+      top: 10px;
+      right: -100px;
+      font-size: 18px;
+      color: #FFF;
+      background: #4CAF50;
+      width: 130px;
+      padding-bottom: -1px;
+      transition: 0.5s;
+      z-index: 1;
+    }
+    .link3{
+      position: fixed;
+      top: 50px;
+      left: -150px;
+      font-size: 18px;
+      color: #FFF;
+      background: #4CAF50;
+      width: 185px;
+      padding-bottom: -1px;
+      transition: 1s;
+      z-index: 1;
+    }
+   .link3:hover{
+      transform: translateX(140px);
+      color: #FFF;
+    }
+    .link1:hover{
+      transform: translateX(-80px);
+      color: #FFF;
+    }
+    .link2{
+      background: #F00;
+      font-size: 18px;
+      padding: 0 10px;
+    }
+    .link4{
+      position: relative;
+      left: 20px;
+      background: #F00;
+      font-size: 18px;
+      padding: 0 10px;
+    }
+    .da2{
+      position: absolute;
+      top: 15px;
+      left: 10px;
+    }
+    .txt1{padding-bottom: 5px;}
+    .cur{cursor: pointer;}
+    .register{
+      width: 90%;
+      margin-top: 40px;
+    }
+    .register2{margin-top: 20px;}
+    .btn-glass {
+      flex-grow: 1;
+      text-align: center;
+      display: inline-block;
+      color: rgba(255, 255, 255, 0.7);
+      text-decoration: none;
+      padding: 0.5em 0.8em;
+      font-family: Lato;
+      font-weight: 300;
+      border: 1px dotted transparent;
+      letter-spacing: 0.98pt;
+      text-transform: uppercase;
+      transition: background-position 2s cubic-bezier(0, 1, 0, 1), border-color 500ms, background-color 500ms;
+      position: relative;
+      background-attachment: fixed, scroll;
+      background-size: 100vw 100vh, cover;
+      background-position: center center, 0 0;
+      background-image: repeating-linear-gradient(-45deg, rgba(255, 255, 255, 0) 8%, rgba(255, 255, 255, 0.075) 10%, rgba(255, 255, 255, 0.075) 14%, rgba(255, 255, 255, 0.15) 14%, rgba(255, 255, 255, 0.15) 15%, rgba(255, 255, 255, 0.075) 17%, rgba(255, 255, 255, 0) 30%, rgba(255, 255, 255, 0) 36%, rgba(255, 255, 255, 0.075) 40%, rgba(255, 255, 255, 0.15) 42%, rgba(255, 255, 255, 0) 43%, rgba(255, 255, 255, 0) 55%, rgba(255, 255, 255, 0.075) 60%, rgba(255, 255, 255, 0.075) 66%, rgba(255, 255, 255, 0.15) 66%, rgba(255, 255, 255, 0.075) 70%, rgba(255, 255, 255, 0) 75%, rgba(255, 255, 255, 0) 100%), radial-gradient(ellipse farthest-corner, transparent, rgba(0, 0, 0, 0.2) 110%);
+    }
+    .btn-glass:hover {
+      background-position: -100vw 0, 0 0;
+    }
+    .btn-glass:active {
+      background-position: -75vw 0, 0 0;
+      border-style: solid;
+    }
+    .in{display: inline-block;}
+    .cupid-green {
+      position: relative;
+      top: -30px;
+      background: rgba(255,0,0,0.7);
+      color: #FFF;
+      width: 150px;
+      font-family: times;
+     }
+     .cupid-mar{margin-top: -10px;}
+  </style>
+
+</head>
+<body>
+
+  <span class="devb"></span>
+  <img src="trainingimages/devback1.png" alt="" width="100%" height="250px">
+  <h1 class="devh devh1">Professional Development Programs</h1>
+  <h2 class="devh devh2 cur" onclick="clickslide1()">Personal Development</h2>
+  <h2 class="devh devh3 cur" onclick="clickslide2()">Software Development</h2>
+    <a class="link1" href="training.html" style="text-decoration: none;">
+      <i class="fa fa-caret-left link2"></i> <span class="txt1"> Training</span>
+    </a>
+    <button class="link3" onclick="downslide()"><span class="txt1">4 Free Courses </span><i class="fa fa-caret-right link4"></i></button>
+    <div class="dropdown da2">
+    <span class="dropdown-toggle" data-toggle="dropdown">
+      <span class="">
+        <a href="#"><span class="glyphicon glyphicon-th wr"></span></a>
+        <span style="color: #fff; cursor: pointer;"> All Courses</span>
+      </span>
+    </span>
+    <ul class="dropdown-menu w">
+      <li><a tabindex="-1" href="business.html"><span class="ic glyphicon glyphicon-briefcase"></span> Business</a></li>
+      <li><a tabindex="-1" href="it.html"><i class="ic fa fa-desktop"></i> It & Software</a></li>
+      <li><a tabindex="-1" href="design.html"><i class="ic fa fa-edit"></i> Design</a></li>
+      <li><a tabindex="-1" href="marketing.html"><span class="ic glyphicon glyphicon-globe"></span> Marketing</a></li>
+      <li><a tabindex="-1" href="pgdhrm.html"><span class="ic glyphicon glyphicon-education"></span>PGDHRM</a></li>
+      <li><a tabindex="-1" href="photography.html"><span class="ic glyphicon glyphicon-camera"></span> Photography</a></li>
+      <li><a tabindex="-1" href="language.html"><i class="ic fa fa-comments"></i> Language</a></li>
+    </ul>
+  </div>
+  <div class="row">
+    <div class="col-sm-5 mar">
+      <h4>I. PROFESSIONAL DEVELOPMENT</h4>
+      <p>Growth and development is an ongoing process for all levels of the University employees. The Professional Development
+         workshops are designed to assist Jackson State Universitystaff employees build valuable work skills and improve individual
+          performance by increasing knowledge and enhancing productivity.</p>
+    </div>
+    <div class="col-sm-5 mar">
+      <h4>II. MANAGEMENT AND SUPERVISORS DEVELOPMENT</h4>
+      <p>Management Development offers management development and leadership training through seminars, conferences and
+        e-learning platforms. It develops management into leaders by improving the interpersonal skills and enabling them
+        to collaborate and accelerate change with employees. These workshops provide Jackson State University managers the
+        fundamental skills needed to effectively manage the selection, development, and retention of University employees.</p>
+    </div>
+    <div class="col-sm-5 mar mar2">
+      <h4>III. TECHNOLOGY DEVELOPMENT</h4>
+      <p>The Office of Information Management (OIM) provides workshops to all employees with the fundamental skills to use
+        desktop applications in the workplace. The Technology department applies and enhances technical excellence, professional
+        knowledge and skills that develop effectiveness and efficiency in the workplace. The training center offers computer skilled
+        classes for all University employees at no cost to the participant. For more information about the scheduled courses go to the
+        technology website:</p>
+    </div>
+    <div class="col-sm-5 mar mar2">
+      <h4>IV. WORKSHOP DEVELOPMENT </h4>
+      <p>Jackson Sate University offers a full range of on-site training services to departments and employees. The Professional
+         Development Center can customize the delivery of any training program to accommodate and meet specific unit needs by
+         developing case studies, role plays, and simulations based on goals specific to the organization. The advantages of
+         a customized on-site training for department and units are:</p>
+         <ul>
+           <li>It is more efficient and cost-effective to conduct on site for groups.</li>
+           <li>Instructors can devote more time to discussing specific issues</li>
+           <li>Employees can train as a team, gaining a shared perspective and common skills.</li>
+         </ul>
+    </div>
+  </div>
+  <h3 class="pdpd">Personal Development</h3>
+  <div class="cards">
+   <div class=" back gr in">
+     <img src="trainingimages/gcom1.png" alt="" class="img111">
+     <h4 class="textcol">Effective Communication with the Gobalised Workplace</h4>
+     <h5>McMaster University</h5>
+     <h5 class="spe">Specialization(5 Courses)</h5>
+     <a href="../apply.jsp"><button type="submit" name="button" class="btn btn-glass btn-primary btn-glass register register2">Register</button></a>
+   </div>
+
+   <div class=" back gr in">
+     <img src="trainingimages/apps1.png" alt="" class="img111">
+     <h4 class="textcol">Java Programming and Software</h4>
+      <h5>McMaster University</h5>
+      <h5 class="spe">Specialization(5 Courses)</h5>
+      <button type="submit" name="button" class="btn btn-glass btn-primary btn-glass register">Register</button>
+   </div>
+   <div class=" back gr in">
+     <img src="trainingimages/hk1.png" alt="" class="img111">
+     <h4 class="textcol">Take a lead on Health Care Quality Improvement</h4>
+     <h5>McMaster University</h5>
+     <h5 class="spe">Specialization(5 Courses)</h5>
+     <button type="submit" name="button" class="btn btn-glass btn-primary btn-glass register register2">Register</button>
+   </div>
+   <div class=" back gr in">
+     <img src="trainingimages/ps1.png" alt="" class="img111">
+     <h4 class="textcol">Presentation Skill: Speachwriting, Slides and Delivery</h4>
+     <h5>McMaster University</h5>
+     <h5 class="spe">Specialization(5 Courses)</h5>
+     <button type="submit" name="button" class="btn btn-glass btn-primary btn-glass register register2">Register</button>
+   </div>
+   <div class=" back gr in">
+     <img src="trainingimages/aew1.png" alt="" class="img111">
+     <button class="cupid-green">Free to Join</button>
+     <h4 class="textcol cupid-mar">Academic English & Writing</h4>
+     <h5>McMaster University</h5>
+     <h5 class="spe">Specialization(5 Courses)</h5>
+     <button type="submit" name="button" class="btn btn-glass btn-primary btn-glass register">Register</button>
+   </div>
+   <div class=" back gr in">
+     <img src="trainingimages/pbb1.png" alt="" class="img111">
+     <button class="cupid-green">Free to Join</button>
+     <h4 class="textcol cupid-mar">Photography basic & beyond</h4>
+     <h5>McMaster University</h5>
+     <h5 class="spe">Specialization(5 Courses)</h5>
+     <button type="submit" name="button" class="btn btn-glass btn-primary btn-glass register">Register</button>
+   </div>
+   <div class=" back gr in">
+     <img src="trainingimages/csm1.png" alt="" class="img111">
+     <button class="cupid-green">Free to Join</button>
+     <h4 class="textcol cupid-mar">Coaching Skills for Managers</h4>
+     <h5>McMaster University</h5>
+     <h5 class="spe">Specialization(5 Courses)</h5>
+     <button type="submit" name="button" class="btn btn-glass btn-primary btn-glass register">Register</button>
+   </div>
+   <div class=" back gr in">
+     <img src="trainingimages/cars1.png" alt="" class="img111">
+     <button class="cupid-green">Free to Join</button>
+     <h4 class="textcol cupid-mar">Career Success</h4>
+     <h5>McMaster University</h5>
+     <h5 class="spe">Specialization(5 Courses)</h5>
+     <button type="submit" name="button" class="btn btn-glass btn-primary btn-glass register">Register</button>
+   </div>
+
+
+ </div>
+  <h3 class="pdpd sdmar">Software Development</h3>
+  <div class="cards">
+    <div class="in back gr">
+      <img src="trainingimages/pyt.png" alt="" class="img111">
+      <h4 class="textcol">Python For Everybody</h4>
+      <h5>McMaster University</h5>
+      <h5 class="spe">Specialization(5 Courses)</h5>
+      <button type="submit" name="button" class="btn btn-glass btn-primary btn-glass register">Register</button>
+    </div>
+    <div class="in back gr">
+      <img src="trainingimages/ds.png" alt="" class="img111">
+      <h4 class="textcol">Applied Data Science with Python</h4>
+      <h5>McMaster University</h5>
+      <h5 class="spe">Specialization(5 Courses)</h5>
+      <button type="submit" name="button" class="btn btn-glass btn-primary btn-glass register">Register</button>
+    </div>
+    <div class="in back gr">
+      <img src="trainingimages/java.png" alt="" class="img111">
+      <h4 class="textcol">Java Programming and Software</h4>
+      <h5>McMaster University</h5>
+      <h5 class="spe">Specialization(5 Courses)</h5>
+      <button type="submit" name="button" class="btn btn-glass btn-primary btn-glass register">Register</button>
+    </div>
+    <div class="in back gr">
+      <img src="trainingimages/algo.png" alt="" class="img111">
+      <h4 class="textcol">Algorithms</h4>
+      <h5>McMaster University</h5>
+      <h5 class="spe">Specialization(5 Courses)</h5>
+      <button type="submit" name="button" class="btn btn-glass btn-primary btn-glass register">Register</button>
+    </div>
+    <div class="in back gr">
+      <img src="trainingimages/ro.png" alt="" class="img111">
+      <h4 class="textcol">Control of Mobile Robots</h4>
+      <h5>McMaster University</h5>
+      <h5 class="spe">Specialization(5 Courses)</h5>
+      <button type="submit" name="button" class="btn btn-glass btn-primary btn-glass register">Register</button>
+    </div>
+    <div class="in back gr">
+      <img src="trainingimages/bard.png" alt="" class="img111">
+      <h4 class="textcol">Building Arduino Robots $ Devices</h4>
+      <h5>McMaster University</h5>
+      <h5 class="spe">Specialization(5 Courses)</h5>
+      <button type="submit" name="button" class="btn btn-glass btn-primary btn-glass register">Register</button>
+    </div>
+    <div class="in back gr">
+      <img src="trainingimages/ml.png" alt="" class="img111">
+      <h4 class="textcol">Machine Learning</h4>
+      <h5>McMaster University</h5>
+      <h5 class="spe">Specialization(5 Courses)</h5>
+      <button type="submit" name="button" class="btn btn-glass btn-primary btn-glass register">Register</button>
+    </div>
+    <div class="in back gr">
+      <img src="trainingimages/dicv.png" alt="" class="img111">
+      <h4 class="textcol">Deep Learning in Computer Vision</h4>
+      <h5>McMaster University</h5>
+      <h5 class="spe">Specialization(5 Courses)</h5>
+      <button type="submit" name="button" class="btn btn-glass btn-primary btn-glass register">Register</button>
+    </div>
+    <div class="in back gr">
+      <img src="trainingimages/web.png" alt="" class="img111">
+      <h4 class="textcol">Web Development</h4>
+      <h5>McMaster University</h5>
+      <h5 class="spe">Specialization(5 Courses)</h5>
+      <button type="submit" name="button" class="btn btn-glass btn-primary btn-glass register">Register</button>
+    </div>
+    <div class="in back gr">
+      <img src="trainingimages/and.png" alt="" class="img111">
+      <h4 class="textcol">Android Development</h4>
+      <h5>McMaster University</h5>
+      <h5 class="spe">Specialization(5 Courses)</h5>
+      <button type="submit" name="button" class="btn btn-glass btn-primary btn-glass register">Register</button>
+    </div>
+    <div class="in back gr">
+      <img src="trainingimages/ios.png" alt="" class="img111">
+      <h4 class="textcol">IOS Development</h4>
+      <h5>McMaster University</h5>
+      <h5 class="spe">Specialization(5 Courses)</h5>
+      <button type="submit" name="button" class="btn btn-glass btn-primary btn-glass register">Register</button>
+    </div>
+    <div class="in back gr">
+      <img src="trainingimages/game.png" alt="" class="img111">
+      <h4 class="textcol">Game Development</h4>
+      <h5>McMaster University</h5>
+      <h5 class="spe">Specialization(5 Courses)</h5>
+      <button type="submit" name="button" class="btn btn-glass btn-primary btn-glass register">Register</button>
+    </div>
+  </div>
+  <div class="foot1 martop">
+    <p>Copyright &copy; 2018 gradeup, Inc.</p>
+  </div>
+  <script type="text/javascript">
+  function downslide() {
+    document.body.scrollTop = 1000;
+    document.documentElement.scrollTop = 1000;
+  }
+  function clickslide1() {
+    document.body.scrollTop = 700;
+    document.documentElement.scrollTop = 700;
+  }
+  function clickslide2() {
+    document.body.scrollTop = 1630;
+    document.documentElement.scrollTop = 1630;
+  }
+  </script>
+</body>
+</html>
